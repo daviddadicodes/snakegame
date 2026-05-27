@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Snake Reactor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-glow page-glow-left"></div>
+  <div class="page-glow page-glow-right"></div>
+
+  <main class="app-shell">
+    <section class="layout">
+      <aside class="info-panel">
+        <p class="eyebrow">Arcade Reloaded</p>
+        <h1>Neon Snake Reactor</h1>
+        <p class="lead">
+          A fast, polished Snake build with responsive controls, clean overlays,
+          smooth continuous movement, and an arcade look that works on desktop and mobile.
+        </p>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-label">Score</span>
+            <strong class="stat-value" id="score">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Best</span>
+            <strong class="stat-value" id="best-score">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Grid</span>
+            <strong class="stat-value" id="grid-size-label">18x18</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Speed</span>
+            <strong class="stat-value" id="speed-label">1.0x</strong>
+          </article>
+        </div>
+
+        <div class="status-card">
+          <div class="status-pill" id="status-pill">Ready</div>
+          <p id="status-copy">Press play or use the keyboard to begin.</p>
+        </div>
+
+        <div class="button-row">
+          <button class="primary-button" id="start-button">Start</button>
+          <button class="secondary-button" id="pause-button">Pause</button>
+          <button class="secondary-button" id="restart-button">Restart</button>
+        </div>
+
+        <ul class="tips-list">
+          <li>Arrows or WASD to turn</li>
+          <li>Space to pause or resume</li>
+          <li>R to restart instantly</li>
+          <li>Swipe or use the mobile pad on touch screens</li>
+        </ul>
+
+        <div class="micro-stats">
+          <div>
+            <span class="micro-label">Speed</span>
+            <strong id="speed-meter">1.0x</strong>
+          </div>
+          <div>
+            <span class="micro-label">Length</span>
+            <strong id="length-label">3</strong>
+          </div>
+        </div>
+      </aside>
+
+      <section class="board-panel">
+        <div class="board-chrome">
+          <div class="board-topline">
+            <div>
+              <p class="board-kicker">Snake Board</p>
+              <h2>Stay smooth. Stay alive.</h2>
+            </div>
+            <div class="board-chip" id="state-chip">Ready</div>
+          </div>
+
+          <div class="board-wrap">
+            <canvas id="game" width="540" height="540" aria-label="Snake board"></canvas>
+            <div class="scanlines"></div>
+            <div class="board-vignette"></div>
+
+            <div class="overlay visible" id="start-overlay">
+              <div class="overlay-card">
+                <p class="overlay-kicker">Neon Snake Reactor</p>
+                <h2>Ready to slither?</h2>
+                <p>Collect energy orbs, keep the line alive, and do not fold into yourself.</p>
+                <button class="primary-button" id="overlay-start-button">Start</button>
+              </div>
+            </div>
+
+            <div class="overlay" id="pause-overlay">
+              <div class="overlay-card">
+                <p class="overlay-kicker">Paused</p>
+                <h2>Run on standby.</h2>
+                <p>Take a breath, then jump back in when you are ready.</p>
+                <button class="primary-button" id="resume-button">Resume</button>
+              </div>
+            </div>
+
+            <div class="overlay" id="game-over-overlay">
+              <div class="overlay-card">
+                <p class="overlay-kicker">Signal Lost</p>
+                <h2>Game over.</h2>
+                <p id="game-over-message">Score: 0</p>
+                <button class="primary-button" id="restart-overlay-button">Play Again</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-controls" aria-label="Touch controls">
+            <button class="control-button up" data-direction="up" aria-label="Move up">&#9650;</button>
+            <button class="control-button left" data-direction="left" aria-label="Move left">&#9664;</button>
+            <button class="control-button center" id="mobile-pause-button" aria-label="Pause or resume">II</button>
+            <button class="control-button right" data-direction="right" aria-label="Move right">&#9654;</button>
+            <button class="control-button down" data-direction="down" aria-label="Move down">&#9660;</button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
