@@ -57,3 +57,33 @@ http://127.0.0.1:8766/
 ## Repository
 
 GitHub: [daviddadicodes/snakegame](https://github.com/daviddadicodes/snakegame)
+
+## Deploy On Vercel
+
+This project is ready to deploy as a static site on Vercel.
+
+### Option 1: Import the GitHub repository
+
+1. Open [Vercel](https://vercel.com/)
+2. Create a new project
+3. Import `daviddadicodes/snakegame`
+4. Keep the default settings
+5. Deploy
+
+No build command is required for this project.
+
+### Option 2: Deploy with the Vercel CLI
+
+If you have the Vercel CLI installed:
+
+```powershell
+vercel
+```
+
+For production:
+
+```powershell
+vercel --prod
+```
+
+The included [vercel.json](/C:/Users/d_dad/Documents/Codex/2026-05-27/build-a-complete-playable-snake-game/vercel.json) provides static hosting-friendly defaults.
